@@ -7,6 +7,7 @@ import styled, { ThemeProvider } from "styled-components/native";
 export default function Home(){
     return(
         <ThemeProvider theme={theme}>
+
         <Container>
             
         </Container>   

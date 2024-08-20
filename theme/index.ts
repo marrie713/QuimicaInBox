@@ -3,6 +3,7 @@ export default {
       WHITE: '#FFFFFF',
   
       BLUE_700: '#00507D',
+      BLUE_500: '#45C7C9',
       BLUE_100: '#DFF2FF',
   
       RED: '#F75A68',
