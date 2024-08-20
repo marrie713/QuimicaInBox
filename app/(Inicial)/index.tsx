@@ -8,14 +8,13 @@ export default function Home(){
     return(
         <ThemeProvider theme={theme}>
         <Container>
-
+            
         </Container>   
-        </ThemeProvider> )
-}
+        </ThemeProvider> 
 
+)}
 
 const Container = styled.View`
-    width: 100%;
-    height: 100%;
-    background-color: ${({theme}) => theme.COLORS.GREEN_500};
+    height: 100rem;
+    background-color: ${({theme}) => theme.COLORS.BLUE_100};
     `

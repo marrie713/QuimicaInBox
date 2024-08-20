@@ -2,8 +2,8 @@ export default {
     COLORS: {
       WHITE: '#FFFFFF',
   
-      BLUE_700: '#2d65b9',
-      GREEN_500: '#00B37E',
+      BLUE_700: '#00507D',
+      BLUE_100: '#DFF2FF',
   
       RED: '#F75A68',
       RED_DARK: '#AA2834',
