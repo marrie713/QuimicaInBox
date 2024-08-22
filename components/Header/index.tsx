@@ -1,6 +1,6 @@
 
 import theme from "@/theme";
-import { Image, Text, View } from "react-native";
+import { Image, View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import styled, { ThemeProvider } from "styled-components/native";
 import { Link } from "expo-router";
@@ -10,49 +10,58 @@ export default function Header(){
     return(
         <ThemeProvider theme={theme}>
         <Container>
-                <Image style={{height: 170, width: 170}} source={require('../../assets/images/Logo2.png')}/>
+            <Image style={{height: 70, width: 210}} source={require('../../assets/images/Logo.png')}/>
 
-            <View style={{flexDirection: 'row', gap: 10  }}>
+            <View style={{flexDirection: 'row', gap: 10  }}> 
 
             <Link href='/(Inicial)'>
                 <TouchableOpacity >
                 <Title> Home </Title>   
                 </TouchableOpacity> 
-            </Link>
+            </Link> 
 
-            
+            <Link href='/(Inicial)'>
                 <TouchableOpacity>
                 <Title> Atomística </Title>
                 </TouchableOpacity>
-            
+            </Link>
 
+            <Link href='/(Inicial)'>
                 <TouchableOpacity>
                 <Title> Química Geral </Title>
                 </TouchableOpacity>
+            </Link>
 
+            <Link href='/(Inicial)'>
                 <TouchableOpacity>
                 <Title> Inorgânica </Title>
                 </TouchableOpacity>
-
+            </Link>
+          
+            <Link href='/(Inicial)'>
                 <TouchableOpacity>
                 <Title> Físico Química </Title>
                 </TouchableOpacity>
+            </Link>
 
+            <Link href='/(Inicial)'>
                 <TouchableOpacity>
                 <Title> Orgânica </Title>
                 </TouchableOpacity>
-            </View>
+            </Link>
+
+            </View> 
             <Link href='/(login)'>
             
             {/*Icon de Conta */}
-            <Icon
-                name='person'
+             <Icon
+                name='Account-Circle'
                 type='material'
-                color='#ffff'
-                size={40}
+                color='#fff'
+                size={30}
             />
-                
-            </Link>
+                 
+            </Link> 
 
         </Container>   
        
@@ -63,11 +72,12 @@ const Container = styled.View`
     height: 10rem;
     flex-direction: row;    
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    padding: 3rem;
     background-color: ${({theme}) => theme.COLORS.BLUE_700};
 `
 
 const Title = styled.Text`
-    font-size: ${({theme}) => theme.FONT_SIZE.LG};
+    font-size: ${({theme}) => theme.FONT_SIZE.LG}px;
     color: ${({theme}) => theme.COLORS.WHITE};
 `
