@@ -1,19 +1,61 @@
 import styled, { ThemeProvider } from "styled-components/native";
 import theme from "@/theme";
 import { View, Image, Text, TextInput, Pressable } from "react-native";
-
+import Animated, { useSharedValue, useAnimatedStyle, withSpring, withTiming } from 'react-native-reanimated';
 import { Input, Icon } from "react-native-elements";
 import { useState } from "react";
-
+import { apiConfig } from "@/Utils/axios";
+import { Alert } from "react-native";
+import { router } from "expo-router";
 
 
 export default function Login(){
  
  const [passwordVisible, SetPasswordVisible] = useState(true)
+ const [email, setEmail] = useState('@')
+ const [password, setPassword] = useState('_password_')
 
- const [email, SetEmail] = useState('someemail@')
- const [password, SetPassword] = useState('1234567890')
 
+ const opacity = useSharedValue(0); // Opacidade inicial a 0 para efeito de fade-in
+ const animatedImageStyle = useAnimatedStyle(() => {
+    return {
+        opacity: opacity.value,
+        transform: [{ scale: withTiming(opacity.value, { duration: 800 }) }],
+    };
+});
+
+async function loginFunc()
+    {
+        try
+            {
+                //Ja que a API é padrão para todo o sistema, isolei as configurações gerais
+                //e apenas importo elas aonde preciso e uso o método http que eu quero
+
+                let res = await apiConfig.post('/login',{
+                    email: email,
+                    senha: password
+                });
+
+                if(res.status == 204){
+                    return Alert.alert('Ops...','Usuario ou senha incorretos!',
+                        [
+                            {
+                                text: 'Ok'
+                            }
+                        ]
+                    )
+                }
+                else
+                {
+                   router.push('/(Inicial)') 
+                }
+            }
+            catch(error)
+            {
+                console.log(error)
+                throw new Error('Erro ao logar... :');        
+            }
+        }
 
  
     return(
@@ -33,11 +75,11 @@ export default function Login(){
                     </View>
 
                     <View style={{gap: 20}}>
-                       <Input placeholder="Email"/>
+                       <Input placeholder="Email" onChangeText={text => setEmail(text)}/>
                        <Input placeholder="Senha"
                        
                           secureTextEntry={passwordVisible}
-                          onChangeText={text => SetPassword(text)}
+                          onChangeText={text => setPassword(text)}
                                   rightIcon={
                                       passwordVisible ? 
                                       
@@ -59,10 +101,11 @@ export default function Login(){
                     </View>
 
                     <View style={{gap: 30}}>
-                       <Button>
+                       <Button onPress={()=> loginFunc()}>
                          <Text style={{color: '#fff'}}>Entrar</Text>
                        </Button>
                     </View>
+                  
                  
                     </Caixa>
                 </Section>
@@ -113,7 +156,6 @@ const Caixa = styled.View`
     gap: 4rem;
     background-color: ${({theme}) => theme.COLORS.WHITE};
     border-top-right-radius: 2rem;
-   
     border-bottom-right-radius: 2rem;
     `
     

@@ -5,7 +5,9 @@ export default function RootLayout() {
   return (
     <Stack>
       <Stack.Screen name="(Inicial)/index" options={{header: Header}} />
+      <Stack.Screen name="(ZAtomistica)/index" options={{header: Header}} />
       <Stack.Screen name='(login)/index' options={{ headerShown: false}} />
+      <Stack.Screen name='(Escolha)/index' options={{ headerShown: false}} />
     </Stack>
   );
 }

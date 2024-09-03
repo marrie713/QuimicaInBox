@@ -12,7 +12,7 @@ export default function Header(){
         <Container>
             <Image style={{height: 70, width: 210}} source={require('../../assets/images/Logo.png')}/>
 
-            <View style={{flexDirection: 'row', gap: 10  }}> 
+            <View style={{flexDirection: 'row', gap: 10 }}> 
 
             <Link href='/(Inicial)'>
                 <TouchableOpacity >
@@ -20,7 +20,7 @@ export default function Header(){
                 </TouchableOpacity> 
             </Link> 
 
-            <Link href='/(Inicial)'>
+            <Link href='/(ZAtomistica)'>
                 <TouchableOpacity>
                 <Title> Atomística </Title>
                 </TouchableOpacity>
@@ -55,7 +55,7 @@ export default function Header(){
             
             {/*Icon de Conta */}
              <Icon
-                name='Account-Circle'
+                name='person'
                 type='material'
                 color='#fff'
                 size={30}
@@ -69,7 +69,7 @@ export default function Header(){
 }
 
 const Container = styled.View`
-    height: 10rem;
+    height: 8rem;
     flex-direction: row;    
     align-items: center;
     justify-content: space-between;

@@ -3,11 +3,14 @@ export default {
       WHITE: '#FFFFFF',
       WHITE_BLUE: '#DFF2FF',
       
-      BLUE_700: '#00243C',
+      BLUE_700: '#102b53',
       BLUE_500: '#00507D',
       BLUE_400: '#0392BE',
+      BLUE_3OO: '#1d64d0',
+      BLUE_200: '#bdd3e7',
       
       GREEN_500: '#07ADC7',
+      GREEN_300: '#3BD8FA',
       GREEN_400: '#45C7C9',
       GREEN_200: '#7AEDE8',
   
