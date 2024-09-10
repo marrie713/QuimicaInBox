@@ -4,7 +4,9 @@ import { useFonts, Inter_500Medium, Inter_700Bold } from '@expo-google-fonts/int
 import styled, { ThemeProvider } from "styled-components/native"; 
 import { useEffect } from "react";
 import { SplashScreen } from "expo-router";
-import { Text, View } from "react-native";
+import { Pressable, ScrollView, Text, View } from "react-native";
+import { Icon } from "react-native-elements"; 
+import { FlatList, SafeAreaView } from "react-native";
 
 
 export default function Home(){
@@ -19,92 +21,210 @@ export default function Home(){
             SplashScreen.hideAsync();
         }
     }, [fontsLoaded, fontError]);
+
+    const DATA = [
+        {
+          id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+          title: 'First Item',
+        },
+        {
+          id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+          title: 'Second Item',
+        },
+        {
+           id: '3ac68afc-c5-48d3-a4f8-fbd91aa97f63',
+           title: 'Second Item',
+        },
+        {
+            id: '3ac68afc-c605-48d3-a4f8-fbd91a7f63',
+            title: 'Second Item',
+        },
+
+      ];
+
+      type ItemProps = {title: string};
+
+        const Item = ({title}: ItemProps) => (
+        <Testes>
+            <IconCard source={require('../../assets/images/Icons/atom.png')}/>
+            <View style={{ gap: 10}}>
+                <Titulo>Estrutura Atômica</Titulo>
+                <Conteudo>Sobre os testes sobre os testes sobre os testes Sobre os testes sobre os testes</Conteudo>
+            </View>
+            <Button>
+                <Text style={{color:'#fff', fontSize: 16, fontWeight: "bold"}}>Acessar</Text>
+            </Button>
+        </Testes>
+        );
     
     return (
-      
+        <ScrollView>
         <ThemeProvider theme={theme}>
             <Container>
                 <Title>
-                    <Text style={{color: '#fff', fontSize: 22, paddingEnd: 10, textAlign: "right", alignItems: 'center', fontWeight: 600}}>Sobre Atomística</Text>
+                    <Label>Sobre Atomística</Label>
                 </Title>
-            <View style={{justifyContent: 'center', alignItems: 'center', height: 500}}>
                 <Section>
-                   <Card>
-                        <Texto>
-                            Inserir um pouquinho de textoInserir um pouquinho de textoInserir um pouquinho de texto
-                        </Texto>
-
-                        <Texto>
-                            Inserir um pouquinho de textoInserir um pouquinho de textoInserir um pouquinho de texto
-                        </Texto>
-
-                        <Texto>
-                            Inserir um pouquinho de textoInserir um pouquinho de textoInserir um pouquinho de texto
-                        </Texto>
-                   </Card>
-
-                   <Card>
-                        <Texto>
-                            Inserir um pouquinho de textoInserir um pouquinho de textoInserir um pouquinho de texto
-                        </Texto>
-
-                        <Texto>
-                            Inserir um pouquinho de textoInserir um pouquinho de textoInserir um pouquinho de texto
-                        </Texto>
-
-                        <Texto>
-                            Inserir um pouquinho de textoInserir um pouquinho de textoInserir um pouquinho de texto
-                        </Texto>
-                   </Card>
+                <Topicos>
+                    <Numero>1</Numero>
+                    <Card>
+                        <Icones source={require('../../assets/images/Icons/Livro.png')}/>
+                        <Text style={{fontSize: 16}}>A atomística é a parte da Química que trata do estudo do átomo e suas características. "Cabe a esse segmento definir a estrutura atômica, bem como o histórico de elaboração dos nossos modelos atômicos, os tipos de semelhanças entre os átomos, a representação dos elementos químicos e as notações envolvidas.</Text>
+                    </Card>
+                </Topicos>
+                <Topicos>
+                    <Numero>2</Numero>
+                    <Card>
+                        <Icones source={require('../../assets/images/Icons/Atomo.png')}/>
+                        <Text style={{fontSize: 16}}>A atomística é a parte da Química que trata do estudo do átomo e suas características. "Cabe a esse segmento definir a estrutura atômica, bem como o histórico de elaboração dos nossos modelos atômicos, os tipos de semelhanças entre os átomos, a representação dos elementos químicos e as notações envolvidas.</Text>
+                    </Card>
+                </Topicos>
+                <Topicos>
+                    <Numero>3</Numero>
+                    <Card>
+                        <Icones source={require('../../assets/images/Icons/ModeloAtomico.png')}/>
+                        <Text style={{fontSize: 16}}>A atomística é a parte da Química que trata do estudo do átomo e suas características. "Cabe a esse segmento definir a estrutura atômica, bem como o histórico de elaboração dos nossos modelos atômicos, os tipos de semelhanças entre os átomos, a representação dos elementos químicos e as notações envolvidas.</Text>
+                    </Card>
+                </Topicos>
                 </Section>
-            </View>
 
+                <Title>
+                    <Label>
+                    <Icon style={{justifyContent: 'center'}}
+                        name="assignment"
+                        type="material"
+                        color='#fff'
+                        size={30}
+                    />
+                    Testes</Label>
+                </Title>
+                
+                <SafeAreaView>
+                    <FlatList style={{marginBottom: 50}}
+                        data={DATA}
+                        renderItem={({item}) => <Item title={item.title} />}
+                        keyExtractor={item => item.id}
+                        showsHorizontalScrollIndicator={false}
+                        horizontal
+                    />
+                </SafeAreaView>
+                
             </Container>   
         </ThemeProvider>
+        </ScrollView>
   
     );
 }
 
 
 const Container = styled.View`
-    height: 100%;  
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
     background-color: ${({ theme }) => theme.COLORS.WHITE_BLUE}; 
 `
 
 const Title = styled.View`
-   height: 2.5rem;
-   width: 25rem;
-   margin-top: 3rem;
-  
-   border-top-right-radius: 1rem;
-   border-bottom-right-radius: 1rem;
-   justify-content: center;
-   background-color: ${({ theme }) => theme.COLORS.BLUE_3OO}; 
+    width: 100%;
+    padding-top: 40px;
+ 
 `
 
-const Texto = styled.View`
-    font-size: 1rem;
-    font-weight: 600;
-    margin-top: 1rem;
+const Label = styled.Text`
+    text-align: end ;
+    padding: 4px;
+    width: 30%;
+    font-weight: bolder;
+    border-top-right-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+    color: ${({theme}) => theme.COLORS.WHITE};
+    font-size: ${({theme}) => theme.FONT_SIZE.XL}px;
+    background-color: ${({ theme }) => theme.COLORS.BLUE_300}; 
+`
+
+
+const Titulo = styled.Text`
+    text-align: center;
+    font-weight: bolder;
+    font-size: 25px;
+ 
+`
+
+const Conteudo = styled.Text`
+    text-align: center;
+    font-size: 16px;
+ 
 `
 
 const Section = styled.View`
-    height: 80%;
-    width: 50%;
-    flex-direction: row;
+    margin: 16px;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    gap: 2rem;
     border-radius: 1rem;
-    margin-bottom: 3rem;
-    background-color: ${({ theme }) => theme.COLORS.BLUE_200};
+`
+
+const Topicos = styled.View`
+    width: 1000px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 2rem;
+`
+
+const Numero = styled.View`
+    height: 45px;
+    width: 45px;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+    margin-left: 90px;
+    font-size: ${({theme}) => theme.FONT_SIZE.XL}px;
+    color: ${({theme}) => theme.COLORS.WHITE};
+    background-color: ${({ theme }) => theme.COLORS.BLUE_300}; 
+    border-radius: 50%;
 `
 
 const Card = styled.View`
-    height: 95%;
-    width: 47%;
+    height: 130px;
+    width: 800px; 
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     border-radius: 1rem;
     padding: 1.2rem;
-    gap: 2rem;
+    gap: 30px;
     background-color: ${({ theme }) => theme.COLORS.WHITE};
 `
+
+const Icones = styled.Image`
+    height: 70px;
+    width: 70px;
+`
+
+const IconCard = styled.Image`
+    height: 100px;
+    width: 100px;
+    margin-top: 20px;
+`
+
+const Testes = styled.View`
+    height: 350px;
+    width: 300px; 
+    align-items: center;
+    margin-top: 80px;
+    margin-left: 30px;
+    justify-content: space-between;
+    background-color: ${({ theme }) => theme.COLORS.WHITE};
+`
+const Button = styled.TouchableOpacity`
+    height: 40px;
+    width: 110px; 
+    margin-bottom: 15px;
+    justify-content: center;
+    align-items: center;
+    background-color: ${({ theme }) => theme.COLORS.BLUE_300};
+`
+
+

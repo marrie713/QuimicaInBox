@@ -12,9 +12,9 @@ function IndividualIntervalsExample() {
         <Banner source={require('../../assets/images/Banner.png')} />
       </Carousel.Item>
       <Carousel.Item interval={3000}>
-        <Banner source={require('../../assets/images/Banner.png')}/>
+        <Banner source={require('../../assets/images/Banner1.png')}/>
       </Carousel.Item>
-      <Carousel.Item>
+      <Carousel.Item interval={3000}>
       < Banner source={require('../../assets/images/Banner.png')}/>
       </Carousel.Item>
       <Carousel.Item interval={3000}>

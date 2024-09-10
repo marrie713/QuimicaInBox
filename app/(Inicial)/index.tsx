@@ -30,7 +30,7 @@ export default function Home(){
                 <IndividualIntervalsExample/>
                  <Section>
                     <Card>
-                        <Icon style={{alignItems: 'flex-start', paddingLeft: 4}}
+                        <Icon style={{alignItems: 'flex-start', paddingLeft: 10}}
                         name="school"
                         type="material"
                         color='#38b6ff'
@@ -43,7 +43,7 @@ export default function Home(){
                     </Card>
 
                     <Card>
-                        <Icon style={{alignItems: 'flex-start', paddingLeft: 4}}
+                        <Icon style={{alignItems: 'flex-start', paddingLeft: 10}}
                         name="school"
                         type="material"
                         color='#38b6ff'
@@ -56,7 +56,7 @@ export default function Home(){
                     </Card>
 
                     <Card>
-                        <Icon style={{alignItems: 'flex-start', paddingLeft: 4}}
+                        <Icon style={{alignItems: 'flex-start', paddingLeft: 10}}
                         name="school"
                         type="material"
                         color='#38b6ff'
@@ -85,6 +85,8 @@ const Card = styled.View`
     width: 25rem;   
     border-radius: 1rem;
     margin-top: -120;
+    border-bottom-color:  ${({ theme }) => theme.COLORS.BLUE_300};
+    border-bottom-width: 3px;
         
     background-color: ${({ theme }) => theme.COLORS.WHITE}; 
 
@@ -97,13 +99,13 @@ const Section = styled.View`
 `
 
 const Title = styled.Text`
-   padding-left: 0.5rem;
+   padding-left: 1rem;
    font-size: 1.2rem;
    font-weight: bold;
 `
 const Content = styled.Text`
    width: 25rem;
-   padding-left: 0.5rem;
+   padding-left: 1rem;
   
 `
 

@@ -6,7 +6,7 @@ export default {
       BLUE_700: '#102b53',
       BLUE_500: '#00507D',
       BLUE_400: '#0392BE',
-      BLUE_3OO: '#1d64d0',
+      BLUE_300: '#1d64d0',
       BLUE_200: '#bdd3e7',
       
       GREEN_500: '#07ADC7',
