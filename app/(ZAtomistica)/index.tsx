@@ -2,60 +2,44 @@
 import theme from "@/theme"; 
 import { useFonts, Inter_500Medium, Inter_700Bold } from '@expo-google-fonts/inter';
 import styled, { ThemeProvider } from "styled-components/native"; 
-import { useEffect } from "react";
-import { SplashScreen } from "expo-router";
 import { Pressable, ScrollView, Text, View } from "react-native";
 import { Icon } from "react-native-elements"; 
 import { FlatList, SafeAreaView } from "react-native";
+import TestCard from "@/components/TestCard";
 
 
 export default function Home(){
 
-    const [fontsLoaded, fontError] = useFonts({
-        Inter_500Medium,
-        Inter_700Bold,
-      });
-
-      useEffect(() => {
-        if (fontsLoaded || fontError) {
-            SplashScreen.hideAsync();
-        }
-    }, [fontsLoaded, fontError]);
-
     const DATA = [
         {
-          id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-          title: 'First Item',
+            id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+            imagem: '../../assets/images/Icons/atom.png',
+            titulo: 'Modelos atômicos',
+            texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
+            materia: 'sla'
         },
         {
-          id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-          title: 'Second Item',
+            id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+            imagem: '../../assets/images/Icons/atom.png',
+            titulo: 'Estrutura Atômica',
+            texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
+            materia: 'sla'
         },
         {
-           id: '3ac68afc-c5-48d3-a4f8-fbd91aa97f63',
-           title: 'Second Item',
+            id: '3ac68afc-c5-48d3-a4f8-fbd91aa97f63',
+            imagem: '../../assets/images/Icons/atom.png',
+            titulo: 'Configuração eletrônica',
+            texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
+            materia: 'sla'
         },
         {
             id: '3ac68afc-c605-48d3-a4f8-fbd91a7f63',
-            title: 'Second Item',
+            imagem: '../../assets/images/Icons/atom.png',
+            titulo: 'Radioatividade',
+            texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
+            materia: 'sla'
         },
-
       ];
-
-      type ItemProps = {title: string};
-
-        const Item = ({title}: ItemProps) => (
-        <Testes>
-            <IconCard source={require('../../assets/images/Icons/atom.png')}/>
-            <View style={{ gap: 10}}>
-                <Titulo>Estrutura Atômica</Titulo>
-                <Conteudo>Sobre os testes sobre os testes sobre os testes Sobre os testes sobre os testes</Conteudo>
-            </View>
-            <Button>
-                <Text style={{color:'#fff', fontSize: 16, fontWeight: "bold"}}>Acessar</Text>
-            </Button>
-        </Testes>
-        );
     
     return (
         <ScrollView>
@@ -100,11 +84,15 @@ export default function Home(){
                 </Title>
                 
                 <SafeAreaView>
-                    <FlatList style={{marginBottom: 50}}
+                <FlatList style={{marginBottom: 50}}
                         data={DATA}
-                        renderItem={({item}) => <Item title={item.title} />}
+                        renderItem={({item}) => <TestCard
+                            imagem={item.imagem}
+                            titulo={item.titulo}
+                            texto={item.texto}
+                            materia={item.materia} 
+                        />}
                         keyExtractor={item => item.id}
-                        showsHorizontalScrollIndicator={false}
                         horizontal
                     />
                 </SafeAreaView>
@@ -112,7 +100,7 @@ export default function Home(){
             </Container>   
         </ThemeProvider>
         </ScrollView>
-  
+                            
     );
 }
 

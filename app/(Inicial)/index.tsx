@@ -4,7 +4,6 @@ import { useFonts, Inter_500Medium, Inter_700Bold } from '@expo-google-fonts/int
 import styled, { ThemeProvider } from "styled-components/native"; 
 import { useEffect } from "react";
 import { SplashScreen } from "expo-router";
-import { ScrollView, Text } from "react-native";
 import { Icon } from "react-native-elements";
 import IndividualIntervalsExample from "@/components/Carousel";
 ;
