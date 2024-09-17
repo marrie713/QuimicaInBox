@@ -14,7 +14,7 @@ export default function Header(){
 
             <View style={{flexDirection: 'row', gap: 10 }}> 
 
-            <Link href='/(Inicial)'>
+            <Link href='/' asChild>
                 <TouchableOpacity >
                 <Title> Home </Title>   
                 </TouchableOpacity> 
@@ -26,25 +26,25 @@ export default function Header(){
                 </TouchableOpacity>
             </Link>
 
-            <Link href='/(Inicial)'>
+            <Link href='/' asChild>
                 <TouchableOpacity>
                 <Title> Química Geral </Title>
                 </TouchableOpacity>
             </Link>
 
-            <Link href='/(Inicial)'>
+            <Link href='/' asChild>
                 <TouchableOpacity>
                 <Title> Inorgânica </Title>
                 </TouchableOpacity>
             </Link>
           
-            <Link href='/(Inicial)'>
+            <Link href='/' asChild>
                 <TouchableOpacity>
                 <Title> Físico Química </Title>
                 </TouchableOpacity>
             </Link>
 
-            <Link href='/(Inicial)'>
+            <Link href='/' asChild>
                 <TouchableOpacity>
                 <Title> Orgânica </Title>
                 </TouchableOpacity>

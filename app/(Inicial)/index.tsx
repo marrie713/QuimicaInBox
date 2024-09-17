@@ -6,8 +6,6 @@ import { useEffect } from "react";
 import { SplashScreen } from "expo-router";
 import { Icon } from "react-native-elements";
 import IndividualIntervalsExample from "@/components/Carousel";
-;
-
 
 export default function Home(){
 
@@ -26,7 +24,7 @@ export default function Home(){
       
         <ThemeProvider theme={theme}>
             <Container>
-                <IndividualIntervalsExample/>
+            <IndividualIntervalsExample/>
                  <Section>
                     <Card>
                         <Icon style={{alignItems: 'flex-start', paddingLeft: 10}}

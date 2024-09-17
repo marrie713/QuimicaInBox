@@ -7,7 +7,9 @@ export default {
       BLUE_500: '#00507D',
       BLUE_400: '#0392BE',
       BLUE_300: '#1d64d0',
+      BLUE_250: '#87b8e6',
       BLUE_200: '#bdd3e7',
+      BLUE_100: '#c6d7f2',
       
       GREEN_500: '#07ADC7',
       GREEN_300: '#3BD8FA',
@@ -31,6 +33,6 @@ export default {
       SM: 14,
       MD: 16,
       LG: 18,
-      XL: 38,
+      XL: 24,
     }
   };

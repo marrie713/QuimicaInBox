@@ -14,7 +14,7 @@ export default function TestCard({imagem, titulo, texto, materia}: Props){
             <Imagem source={require('../../assets/images/Icons/atom.png')}/>
             <Titulo>{titulo}</Titulo>
             <Conteudo>{texto}</Conteudo>
-             <Link href={"/(Testes)"}>
+            <Link href="/(Forms)/formulario" asChild>
             <Botao>
                 <Text style={{color:'#fff', fontSize: 16, fontWeight: "bold"}}>Acessar</Text>
             </Botao>
