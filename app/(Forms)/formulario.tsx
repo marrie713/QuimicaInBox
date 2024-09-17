@@ -84,15 +84,26 @@ export default function Form() {
 
                         <Alternativas>
                             <A>
-                                <Text>A</Text>
+                                <Botao>A</Botao>
                                 <Text>Dalton – elétron – negativa – núcleo</Text>
                             </A>
                             <A>
-                                <Text>B</Text>
+                                <Botao>B</Botao>
+                                <Text>Bohr – cátion – positiva – elétron</Text>
                             </A>
-                            <A> <Text>C</Text> </A>
-                            <A> <Text>D</Text> </A>
-                            <A> <Text>E</Text> </A>
+                            <A>
+                                <Botao>C</Botao>
+                                <Text>Dalton – nêutron – neutra – próton</Text>
+                            </A>
+                            <A>
+                                <Botao>D</Botao>
+                                <Text>Bohr – fóton – negativa – ânion</Text>
+                            </A>
+                            <A>
+                                <Botao>E</Botao>
+                                <Text>Dalton – próton – positiva – núcleo</Text>
+                            </A>
+                           
 
                         </Alternativas>
 
@@ -193,17 +204,33 @@ const Texto = styled.Text`
 const Main = styled.View`   
     width: 1000px;
     height: 500px;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
     align-items: center;  
     background-color: ${({ theme }) => theme.COLORS.WHITE}; 
 `
 
 const Alternativas = styled.View`
-
+    gap: 10px;
+    flex-direction: column;
 `
 
-const A = styled.Pressable`      
+const A = styled.Pressable`   
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+  
     background-color: ${({ theme }) => theme.COLORS.WHITE}; 
+`
+
+const Botao = styled.TouchableOpacity`   
+    border-width: 2px;
+    height: 30px;
+    width: 30px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    border-color: ${({ theme }) => theme.COLORS.BLUE_300}; ;
+
 `
 
 const Pergunta = styled.Text`
