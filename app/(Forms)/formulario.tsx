@@ -2,12 +2,37 @@
 import theme from "@/theme";
 import { useFonts, Inter_500Medium, Inter_700Bold } from '@expo-google-fonts/inter';
 import styled, { ThemeProvider } from "styled-components/native";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { SplashScreen } from "expo-router";
-import { ScrollView, Text } from "react-native";
+import { Pressable, ScrollView, Text, View } from "react-native";
 import { Icon } from "react-native-elements";
+import TestQuestion from "@/components/TestComponent";
+import { SafeAreaView, FlatList } from "react-native";
+import { apiConfig } from "@/Utils/axios";
+
+type Questoes = {
+    id: string,
+    enunciado: string,
+    imagem: string,
+    alternativa_a: string,
+    alternativa_b: string,
+    alternativa_c: string,
+    alternativa_d: string,
+    alternativa_e: string,
+    correta: string,
+    nivel_questao: string
+}
 
 export default function Form() {
+
+    const [questoes, setQuestoes] = useState<Questoes[]>([])
+
+    useEffect(() => {
+        apiConfig.get(`/teste/${Questoes}`).then((res) =>{
+            setQuestoes(res.data);
+        })
+    })
+
     return (
 
         <ThemeProvider theme={theme}>
@@ -67,53 +92,40 @@ export default function Form() {
                     color='#1d64d0'
                     size={80}
                 />
-
+                
                 <Questoes>
                     <Titulo>
                         <Primeiro>
                             <Texto>Modelo Atômico</Texto>
                         </Primeiro>
                         <Segundo>
-                            <Texto>1 de 20</Texto>
                         </Segundo>
                     </Titulo>
-
                     <Main>
-                        <Pergunta>(PUC-RS) A aceitação histórica da ideia de que a matéria é composta de átomos foi lenta e gradual. Na Grécia antiga, Leucipo e Demócrito são lembrados por terem introduzido o conceito de átomo, mas suas propostas foram rejeitadas por outros filósofos e caíram no esquecimento. No final do século XVIII e início do século XIX, quando as ideias de Lavoisier ganhavam aceitação generalizada, surgiu a primeira teoria atômica moderna, proposta por _______. Essa teoria postulava que os elementos eram constituídos de um único tipo de átomo, enquanto que as substâncias compostas eram combinações de diferentes átomos segundo proporções determinadas. Quase cem anos depois, estudos com raios catódicos levaram J. J. Thomson à descoberta do _______, uma partícula de massa muito pequena e carga elétrica _______, presente em todos os materiais conhecidos. Alguns anos depois, por meio de experimentos em que uma fina folha de ouro foi bombardeada com partículas alfa, Rutherford chegou à conclusão de que o átomo possui em seu centro um _______ pequeno, porém de massa considerável.</Pergunta>
-                        <Pergunta>As palavras que preenchem as lacunas correta e respectivamente estão reunidas em:</Pergunta>
+                        <SafeAreaView style={{ alignItems: 'center' }}>
+                    <FlatList style={{ marginBottom: 50 }}
+                        data={questoes}
+                        keyExtractor={item => item.id}
+                        renderItem={({ item }) => {
+                            return(
+                                <View>
+                                    <Text style={{ width: 600 }}>{item.enunciado}</Text>
+                                    <Text>{item.alternativa_a}</Text>
+                                    <Text>{item.alternativa_b}</Text>
+                                    <Text>{item.alternativa_c}</Text>
+                                    <Text>{item.alternativa_d}</Text>
+                                    <Text>{item.alternativa_e}</Text>
+                                </View>
+                     
+                            )
+                        }}
+                        
 
-                        <Alternativas>
-                            <A>
-                                <Botao>A</Botao>
-                                <Text>Dalton – elétron – negativa – núcleo</Text>
-                            </A>
-                            <A>
-                                <Botao>B</Botao>
-                                <Text>Bohr – cátion – positiva – elétron</Text>
-                            </A>
-                            <A>
-                                <Botao>C</Botao>
-                                <Text>Dalton – nêutron – neutra – próton</Text>
-                            </A>
-                            <A>
-                                <Botao>D</Botao>
-                                <Text>Bohr – fóton – negativa – ânion</Text>
-                            </A>
-                            <A>
-                                <Botao>E</Botao>
-                                <Text>Dalton – próton – positiva – núcleo</Text>
-                            </A>
-                           
-
-                        </Alternativas>
+                    />
+                </SafeAreaView>
 
                     </Main>
-
-
                 </Questoes>
-
-
-
             </Container>
         </ThemeProvider>
 
@@ -182,7 +194,8 @@ const Titulo = styled.View`
 
 const Primeiro = styled.View`
     height: 35px;
-    width: 150px;
+    width: 170px;
+    justify-content: center;
     background-color: ${({ theme }) => theme.COLORS.BLUE_100}; 
 `
 
@@ -196,7 +209,6 @@ const Texto = styled.Text`
     color: #fff;
     font-weight: bold;
     text-align: center;
-    margin-top: 10px;
     font-size: ${({ theme }) => theme.FONT_SIZE.LG}; 
 
 `
@@ -205,13 +217,16 @@ const Main = styled.View`
     width: 1000px;
     height: 500px;
     margin-bottom: 25px;
-    align-items: center;  
+    align-items: center; 
     background-color: ${({ theme }) => theme.COLORS.WHITE}; 
 `
 
 const Alternativas = styled.View`
     gap: 10px;
+    margin-top: 25px;
+    margin-right: 540px;
     flex-direction: column;
+    
 `
 
 const A = styled.Pressable`   
@@ -237,6 +252,15 @@ const Pergunta = styled.Text`
     width: 800px;
     text-align: start;
     margin-top: 30px;
+`
+
+const Proxima = styled.Pressable`   
+    height: 28px;
+    width: 110px;
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+    background-color: ${({ theme }) => theme.COLORS.BLUE_250}; 
 `
 
 

@@ -8,22 +8,22 @@ function IndividualIntervalsExample() {
   return (
     <ThemeProvider theme={theme}>
     <Carousel style={{width: 1550, height: 500}}>
-      <Carousel.Item interval={3000}>
+      <Carousel.Item interval={6000}>
         <Banner source={require('../../assets/images/Banners/Banner.png')} />
       </Carousel.Item>
-      <Carousel.Item interval={3000}>
+      <Carousel.Item interval={6000}>
         <Banner source={require('../../assets/images/Banners/Atomistica.png')}/>
       </Carousel.Item>
-      <Carousel.Item interval={3000}>
+      <Carousel.Item interval={6000}>
       < Banner source={require('../../assets/images/Banners/Quimicageral.png')}/>
       </Carousel.Item>
-      <Carousel.Item interval={3000}>
+      <Carousel.Item interval={6000}>
         <Banner source={require('../../assets/images/Banners/Inorganica.png')} />
       </Carousel.Item>
-      <Carousel.Item interval={3000}>
+      <Carousel.Item interval={6000}>
         <Banner source={require('../../assets/images/Banners/Fisicoquimica.png')} />
       </Carousel.Item>
-      <Carousel.Item interval={3000}>
+      <Carousel.Item interval={6000}>
         <Banner source={require('../../assets/images/Banners/Organica.png')} />
       </Carousel.Item>
     </Carousel>

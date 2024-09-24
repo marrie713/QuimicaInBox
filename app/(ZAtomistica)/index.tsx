@@ -6,72 +6,67 @@ import { Pressable, ScrollView, Text, View } from "react-native";
 import { Icon } from "react-native-elements"; 
 import { FlatList, SafeAreaView } from "react-native";
 import TestCard from "@/components/TestCard";
+import { useLocalSearchParams } from "expo-router";
+import { Informacoes } from "@/components/Header";
 
 
 export default function Home(){
-
-    const DATA = [
-        {
-            id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-            imagem: '../../assets/images/Icons/atom.png',
-            titulo: 'Modelos atômicos',
-            texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-            materia: 'sla'
-        },
-        {
-            id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-            imagem: '../../assets/images/Icons/atom.png',
-            titulo: 'Estrutura Atômica',
-            texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-            materia: 'sla'
-        },
-        {
-            id: '3ac68afc-c5-48d3-a4f8-fbd91aa97f63',
-            imagem: '../../assets/images/Icons/atom.png',
-            titulo: 'Configuração eletrônica',
-            texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-            materia: 'sla'
-        },
-        {
-            id: '3ac68afc-c605-48d3-a4f8-fbd91a7f63',
-            imagem: '../../assets/images/Icons/atom.png',
-            titulo: 'Radioatividade',
-            texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-            materia: 'sla'
-        },
-      ];
     
+    // const DATA = [
+    //     {
+    //         id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+    //         imagem: '../../assets/images/Icons/atom.png',
+    //         titulo: 'Modelos atômicos',
+    //         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
+    //         materia: 'sla'
+    //     },
+    //     {
+    //         id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+    //         imagem: '../../assets/images/Icons/atom.png',
+    //         titulo: 'Estrutura Atômica',
+    //         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
+    //         materia: 'sla'
+    //     },
+    //     {
+    //         id: '3ac68afc-c5-48d3-a4f8-fbd91aa97f63',
+    //         imagem: '../../assets/images/Icons/atom.png',
+    //         titulo: 'Configuração eletrônica',
+    //         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
+    //         materia: 'sla'
+    //     },
+    //     {
+    //         id: '3ac68afc-c605-48d3-a4f8-fbd91a7f63',
+    //         imagem: '../../assets/images/Icons/atom.png',
+    //         titulo: 'Radioatividade',
+    //         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
+    //         materia: 'sla'
+    //     },
+    //   ];
+    
+    const{sobre, informacoes, testes} = useLocalSearchParams<{sobre: string, 
+        informacoes: string,
+        testes: string}>();
+
     return (
         <ScrollView>
         <ThemeProvider theme={theme}>
             <Container>
                 <Title>
-                    <Label>Sobre Atomística</Label>
+                    <Label>Sobre {sobre}</Label>
                 </Title>
                 <Section>
-                <Topicos>
-                    <Numero>1</Numero>
-                    <Card>
-                        <Icones source={require('../../assets/images/Icons/Livro.png')}/>
-                        <Text style={{fontSize: 16}}>A atomística é a parte da Química que trata do estudo do átomo e suas características. "Cabe a esse segmento definir a estrutura atômica, bem como o histórico de elaboração dos nossos modelos atômicos, os tipos de semelhanças entre os átomos, a representação dos elementos químicos e as notações envolvidas.</Text>
-                    </Card>
-                </Topicos>
-                <Topicos>
-                    <Numero>2</Numero>
-                    <Card>
-                        <Icones source={require('../../assets/images/Icons/Atomo.png')}/>
-                        <Text style={{fontSize: 16}}>A atomística é a parte da Química que trata do estudo do átomo e suas características. "Cabe a esse segmento definir a estrutura atômica, bem como o histórico de elaboração dos nossos modelos atômicos, os tipos de semelhanças entre os átomos, a representação dos elementos químicos e as notações envolvidas.</Text>
-                    </Card>
-                </Topicos>
-                <Topicos>
-                    <Numero>3</Numero>
-                    <Card>
-                        <Icones source={require('../../assets/images/Icons/ModeloAtomico.png')}/>
-                        <Text style={{fontSize: 16}}>A atomística é a parte da Química que trata do estudo do átomo e suas características. "Cabe a esse segmento definir a estrutura atômica, bem como o histórico de elaboração dos nossos modelos atômicos, os tipos de semelhanças entre os átomos, a representação dos elementos químicos e as notações envolvidas.</Text>
-                    </Card>
-                </Topicos>
+                    {JSON.parse(informacoes).map((info: Informacoes)=>{
+                        return(
+                            <Topicos>
+                                <Numero>{info.numero}</Numero>
+                                <Card>
+                                    <Icones source={{uri: info.icones}}/>
+                                    <Text style={{fontSize: 16}}>{info.texto}</Text>
+                                </Card>
+                            </Topicos>
+                        )
+                    })}
                 </Section>
-
                 <Title>
                     <Label>
                     <Icon style={{justifyContent: 'center'}}
@@ -85,7 +80,7 @@ export default function Home(){
                 
                 <SafeAreaView>
                 <FlatList style={{marginBottom: 50}}
-                        data={DATA}
+                        data={JSON.parse(testes)}
                         renderItem={({item}) => <TestCard
                             imagem={item.imagem}
                             titulo={item.titulo}
@@ -129,21 +124,17 @@ const Label = styled.Text`
     font-size: ${({theme}) => theme.FONT_SIZE.XL}px;
     background-color: ${({ theme }) => theme.COLORS.BLUE_300}; 
 `
-
-
 const Titulo = styled.Text`
     text-align: center;
     font-weight: bolder;
     font-size: 25px;
  
 `
-
 const Conteudo = styled.Text`
     text-align: center;
     font-size: 16px;
  
 `
-
 const Section = styled.View`
     margin: 16px;
     flex-direction: column;
