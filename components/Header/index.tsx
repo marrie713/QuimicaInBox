@@ -271,7 +271,7 @@ export default function Header(){
                 <TouchableOpacity>
                 <Title> Home </Title>   
                 </TouchableOpacity> 
-            </Link> 
+            </Link>
 
             <Link href={{
                 pathname: '/(ZAtomistica)',
