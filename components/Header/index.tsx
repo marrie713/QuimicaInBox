@@ -32,21 +32,21 @@ export default function Header(){
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Estrutura Atômica',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 2
+        materia: 1
     },
     {
         id: '3ac68afc-c5-48d3-a4f8-fbd91aa97f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Configuração eletrônica',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 3
+        materia: 1
     },
     {
         id: '3ac68afc-c605-48d3-a4f8-fbd91a7f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Radioatividade',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 4
+        materia: 1
     }]
 
     const informacoesAtomistica: Informacoes[] = 
@@ -73,44 +73,44 @@ export default function Header(){
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Modelos atômicos',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 5
+        materia: 1
     },
     {
         id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Estrutura Atômica',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 6
+        materia: 1
     },
     {
         id: '3ac68afc-c5-48d3-a4f8-fbd91aa97f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Configuração eletrônica',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 7
+        materia: 1
     },
     {
         id: '3ac68afc-c605-48d3-a4f8-fbd91a7f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Radioatividade',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 8
+        materia: 1
     }]
 
     const informacoesQuimicaGeral: Informacoes[] = 
     [
         {
-            numero: 4,
+            numero: 1,
             icones: '../../assets/images/Icons/Livro.png',
             texto: 'Teste de texto'
         },
         {
-            numero: 5,
+            numero: 2,
             icones: '../../assets/images/Icons/Livro.png',
             texto: 'Teste de texto'
         },
         {
-            numero: 6,
+            numero: 3,
             icones: '../../assets/images/Icons/Livro.png',
             texto: 'Teste de texto'
         }
@@ -121,44 +121,44 @@ export default function Header(){
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Modelos atômicos',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 9
+        materia: 1
     },
     {
         id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Estrutura Atômica',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 10
+        materia: 1
     },
     {
         id: '3ac68afc-c5-48d3-a4f8-fbd91aa97f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Configuração eletrônica',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 11
+        materia: 1
     },
     {
         id: '3ac68afc-c605-48d3-a4f8-fbd91a7f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Radioatividade',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 12
+        materia: 1
     }]
 
     const informacoesInorganica: Informacoes[] = 
     [
         {
-            numero: 7,
+            numero: 1,
             icones: '../../assets/images/Icons/Livro.png',
             texto: 'Teste de texto'
         },
         {
-            numero: 8,
+            numero: 2,
             icones: '../../assets/images/Icons/Livro.png',
             texto: 'Teste de texto'
         },
         {
-            numero: 9,
+            numero: 3,
             icones: '../../assets/images/Icons/Livro.png',
             texto: 'Teste de texto'
         }
@@ -169,44 +169,44 @@ export default function Header(){
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Modelos atômicos',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 13
+        materia: 1
     },
     {
         id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Estrutura Atômica',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 14
+        materia: 1
     },
     {
         id: '3ac68afc-c5-48d3-a4f8-fbd91aa97f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Configuração eletrônica',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 15
+        materia: 1
     },
     {
         id: '3ac68afc-c605-48d3-a4f8-fbd91a7f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Radioatividade',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 16
+        materia: 1
     }]
 
     const informacoesFisicoQuimica: Informacoes[] = 
     [
         {
-            numero: 10,
+            numero: 1,
             icones: '../../assets/images/Icons/Livro.png',
             texto: 'Teste de texto'
         },
         {
-            numero: 11,
+            numero: 2,
             icones: '../../assets/images/Icons/Livro.png',
             texto: 'Teste de texto'
         },
         {
-            numero: 12,
+            numero: 3,
             icones: '../../assets/images/Icons/Livro.png',
             texto: 'Teste de texto'
         }
@@ -217,44 +217,44 @@ export default function Header(){
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Modelos atômicos',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 17
+        materia: 1
     },
     {
         id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Estrutura Atômica',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 18
+        materia: 1
     },
     {
         id: '3ac68afc-c5-48d3-a4f8-fbd91aa97f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Configuração eletrônica',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 19
+        materia: 1
     },
     {
         id: '3ac68afc-c605-48d3-a4f8-fbd91a7f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Radioatividade',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 20
+        materia: 1
     }]
 
     const informacoesOrganica: Informacoes[] = 
     [
         {
-            numero: 13,
+            numero: 1,
             icones: '../../assets/images/Icons/Livro.png',
             texto: 'Teste de texto'
         },
         {
-            numero: 14,
+            numero: 2,
             icones: '../../assets/images/Icons/Livro.png',
             texto: 'Teste de texto'
         },
         {
-            numero: 15,
+            numero: 3,
             icones: '../../assets/images/Icons/Livro.png',
             texto: 'Teste de texto'
         }
@@ -343,8 +343,11 @@ export default function Header(){
                 color='#fff'
                 size={30}
             />
+                 
             </Link> 
-        </Container>     
+
+        </Container>   
+       
         </ThemeProvider> )
 }
 
