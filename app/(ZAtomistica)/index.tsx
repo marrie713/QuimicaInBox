@@ -1,4 +1,3 @@
-
 import theme from "@/theme"; 
 import { useFonts, Inter_500Medium, Inter_700Bold } from '@expo-google-fonts/inter';
 import styled, { ThemeProvider } from "styled-components/native"; 
@@ -8,6 +7,7 @@ import { FlatList, SafeAreaView } from "react-native";
 import TestCard from "@/components/TestCard";
 import { useLocalSearchParams } from "expo-router";
 import { Informacoes } from "@/components/Header";
+import { Key } from "react";
 
 
 export default function Home(){
@@ -55,9 +55,9 @@ export default function Home(){
                     <Label>Sobre {sobre}</Label>
                 </Title>
                 <Section>
-                    {JSON.parse(informacoes).map((info: Informacoes)=>{
+                    {JSON.parse(informacoes).map((info: Informacoes , index:Key)=>{
                         return(
-                            <Topicos>
+                            <Topicos key={index}>
                                 <Numero>{info.numero}</Numero>
                                 <Card>
                                     <Icones source={{uri: info.icones}}/>
@@ -81,6 +81,7 @@ export default function Home(){
                 <SafeAreaView>
                 <FlatList style={{marginBottom: 50}}
                         data={JSON.parse(testes)}
+
                         renderItem={({item}) => <TestCard
                             imagem={item.imagem}
                             titulo={item.titulo}
@@ -89,6 +90,7 @@ export default function Home(){
                         />}
                         keyExtractor={item => item.id}
                         horizontal
+                        
                     />
                 </SafeAreaView>
                 

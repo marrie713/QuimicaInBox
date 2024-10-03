@@ -2,13 +2,13 @@
 import theme from "@/theme";
 import { useFonts, Inter_500Medium, Inter_700Bold } from '@expo-google-fonts/inter';
 import styled, { ThemeProvider } from "styled-components/native";
-import { useEffect, useState } from "react";
-import { SplashScreen } from "expo-router";
+import { useEffect, useState, useCallback } from "react";
 import { Pressable, ScrollView, Text, View } from "react-native";
 import { Icon } from "react-native-elements";
-import TestQuestion from "@/components/TestComponent";
 import { SafeAreaView, FlatList } from "react-native";
 import { apiConfig } from "@/Utils/axios";
+import { Testes } from "@/components/Header"
+
 
 type Questoes = {
     id: string,
@@ -20,19 +20,22 @@ type Questoes = {
     alternativa_d: string,
     alternativa_e: string,
     correta: string,
-    nivel_questao: string
+    nivel: string
 }
 
 export default function Form() {
 
     const [questoes, setQuestoes] = useState<Questoes[]>([])
 
+    const testezin = ( testes : Testes ) => {
+
     useEffect(() => {
-        apiConfig.get(`/teste/${Questoes}`).then((res) =>{
+        apiConfig.get(`/teste/${testes.materia}}`).then((res) =>{
             setQuestoes(res.data);
         })
     })
-
+}
+    
     return (
 
         <ThemeProvider theme={theme}>
@@ -130,7 +133,7 @@ export default function Form() {
         </ThemeProvider>
 
     );
-}
+} 
 
 
 const Container = styled.ScrollView` 
