@@ -10,6 +10,7 @@ import { Informacoes } from "@/components/Header";
 import { Key } from "react";
 
 
+
 export default function Home(){
     
     // const DATA = [
@@ -47,6 +48,9 @@ export default function Home(){
         informacoes: string,
         testes: string}>();
 
+        
+    
+
     return (
         <ScrollView>
         <ThemeProvider theme={theme}>
@@ -81,7 +85,6 @@ export default function Home(){
                 <SafeAreaView>
                 <FlatList style={{marginBottom: 50}}
                         data={JSON.parse(testes)}
-
                         renderItem={({item}) => <TestCard
                             imagem={item.imagem}
                             titulo={item.titulo}

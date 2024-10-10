@@ -40,14 +40,14 @@ export default function Header(){
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Configuração eletrônica',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 4
     },
     {
         id: '3acafc-c605-48d3-a4f8-fbd91a7f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Radioatividade',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 2
     }]
 
     const informacoesAtomistica: Informacoes[] = 
@@ -74,91 +74,91 @@ export default function Header(){
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Propriedades da matéria',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 5
     },
     {
         id: '3ac68afc-c605-4d3-a4f8-fbd91aa97f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Substâncias químicas',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 6
     },
     {
         id: '3ac68afc-c5-48d3-a4f8-fbd91aa97f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Separação de misturas',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 7
     },
     {
         id: '3ac68afc-c605-48d3-a4f8-fbd91a7f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Tabela periódica',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 8
     },
     {
         id: '3a768afc-c605-48d3-a4f8-fbd91a7f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Propriedades periódicas',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 9
     },
     {
         id: '3ac68afc-c605-486523-a4f8-fbd91a7f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Ligações químicas',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 10
     },
     {
         id: '3ac64sg88afc-c605-48d3-a4f8-fbd91a7f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Geometria molecular e Polaridade',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 11
     },
     {
         id: '3ac68afc-c605-48dsrbhthsra7f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Forças intermoleculares',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 12
     },
     {
         id: '3adfrvare8afc-c605-48d3-a4f8-fbd91a7f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Leis ponderais',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 13
     },
     {
         id: '3ac68afc-c60vfdb48d3-a4f8-fbd91a7f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Reações químicas',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 14
     },
     {
         id: '3adsv8afc-c605-48d3-a4f8-fbd91a7f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Quantidade de matéria',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 15
     },
     {
         id: '87ac68afc-c605-48d3-a4f8-fbd91a7f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Gases e transformações gasosas',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 16
     },
     {
         id: '625ac68afc-c605-48d3-a4f8-fbd91a7f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Estequiometria',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 17
     }]
 
     const informacoesQuimicaGeral: Informacoes[] = 
@@ -166,7 +166,7 @@ export default function Header(){
         {
             numero: 1,
             icones: '../../assets/images/Icons/Livro.png',
-            texto: 'Teste de texto'
+            texto: 'srjtsryfjnsgtbfevgredw'
         },
         {
             numero: 2,
@@ -185,35 +185,35 @@ export default function Header(){
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Ácidos',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 18
     },
     {
         id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Bases',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 19
     },
     {
         id: '3ac68afc-c5-48d3-a4f8-fbd91aa97f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Sais',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 20
     },
     {
         id: '3ac68afc-c605-48d3-a4f8-fbd91a7f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Óxidos',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 21
     },
     {
         id: '3ac68afc5-48d3-a4f8-fbd91aa97f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Reações Inorgânicas',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 22
     },]
 
     const informacoesInorganica: Informacoes[] = 
@@ -240,77 +240,77 @@ export default function Header(){
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Soluções',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 23
     },
     {
         id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Diluição e misturas de soluções',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 24
     },
     {
         id: '3ac68afc-c5-48d3-a4f8-fbd91aa97f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Termoquímica',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 25
     },
     {
         id: '3ac68afc-c605-48d3-a4f8-fbd91a7f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Cinética Química',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 26
     },
     {
         id: '3ac68asdac605-48d3-a4f8-fbd91a7f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Equilíbrio Químico',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 27
     },
     {
         id: '3ac68afc-c605-48d3-a4f8-f5bd91a63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Equilíbrio Iônico',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 28
     },
     {
         id: 'ac6afc-c605-48d3-a4f8-çbd91a7f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'pH e pOH',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 29
     },
     {
         id: '3ac68afc-chjs-48d3-a4f8-fbd91a7f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Equilíbrio Heterogêneo',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 30
     },
     {
         id: '7ac68afc-c605-4vv4f8-fbd91a7f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Processos de Óxido-redução',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 31
     },
     {
         id: '3ac68afc-7sdf5-48d3-a4f8-fbd91a7f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Pilhas (Celas Galvânicas)',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 32
     },
     {
         id: '3ac68afc-c605-48895-a4f8-fbd91a7f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Eletrólise (Celas eletrolíticas)',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 33
     }]
 
     const informacoesFisicoQuimica: Informacoes[] = 
@@ -337,77 +337,77 @@ export default function Header(){
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Cadeias Carbônicas',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 34
     },
     {
         id: '3ac6ds-c605-48d3-a4f8-fbd91aa97f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Hidrocarbonetos',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 35
     },
     {
         id: '3ac68afc-c5-48d38958-fbd91aa97f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Funções Oxigenadas',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 36
     },
     {
         id: '3ac68afc-frhm-48d3-a4f8-fbd91a7f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Funções Nitrogenadas e Halogenadas',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 37
     },
     {
         id: '3ac68afc-c605-48d3tyd91a7f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Propriedades Físicas dos Compostos Orgânicos',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 38
     },{
         id: '3ac68afc-c605-48d3-a47jfnfbd91a7f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Isomeria Constitucional (plana)',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 39
     },{
         id: '3a35rth6fc-c605-48d3-a4f8-fbd91a7f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Isomeria Espacial (geométrica e óptica)',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 40
     },{
         id: '3ac68afcgfd63-a4f8-fbd91a7f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Reações de Substituição e Adição',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 41
     },{
         id: '3erttyc605-48d3-a4f8-fbd91a7f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Reações de Eliminação',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 42
     },{
         id: '3ac68afc09-48d3-a4f8-fbd91a7f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Reações de Oxido-redução ',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 43
     },{
         id: '3ac68afc-c605-48d3-a467fbd91a7f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Polímeros e reações de polimerização',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 44
     },{
         id: '3ac68af7505-48d3-a4f8-fbd91a7f63',
         imagem: '../../assets/images/Icons/atom.png',
         titulo: 'Bioquímica',
         texto: 'A atomística é a parte da Química que trata do estudo do átomo e suas características.',
-        materia: 1
+        materia: 45
     }]
 
     const informacoesOrganica: Informacoes[] = 

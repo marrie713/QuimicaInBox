@@ -1,4 +1,6 @@
+import { apiConfig } from "@/Utils/axios"
 import { Link } from "expo-router"
+import { useEffect, useState } from "react"
 import { Text } from "react-native-elements"
 import styled from "styled-components/native"
 
@@ -10,16 +12,23 @@ type Props = {
 }
 
 export default function TestCard({imagem, titulo, texto, materia}: Props){
+
+    const [questoes, setQuestoes] = useState([]);
+
     return(<Container>
             <Imagem source={require('../../assets/images/Icons/atom.png')}/>
             <Titulo>{titulo}</Titulo>
             <Conteudo>{texto}</Conteudo>
-            <Link href="/(Forms)/formulario" asChild>
+            <Link href={{
+                    pathname: "/(Forms)/formulario",
+                    params: { materia: materia}
+                }} asChild>
             <Botao>
                 <Text style={{color:'#fff', fontSize: 16, fontWeight: "bold"}}>Acessar</Text>
             </Botao>
-            </Link> 
-    </Container>)
+            </Link>
+    </Container>
+    )
 }
 
 const Container= styled.View`
