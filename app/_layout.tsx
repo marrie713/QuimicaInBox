@@ -8,6 +8,7 @@ export default function RootLayout() {
       <Stack.Screen name="(ZAtomistica)/index" options={{header: Header}} />
       <Stack.Screen name="(login)/index" options={{headerShown: false}} />
       <Stack.Screen name='(Forms)' options={{headerShown: false}} />
+      <Stack.Screen name='(Resultado)/index' options={{header: Header}} />
     </Stack>
   );
 }

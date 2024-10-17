@@ -2,12 +2,14 @@ import theme from "@/theme";
 import { useFonts, Inter_500Medium, Inter_700Bold } from '@expo-google-fonts/inter';
 import styled, { ThemeProvider } from "styled-components/native";
 import { useEffect, useState, useCallback } from "react";
-import {Pressable, ScrollView, Text, View } from "react-native";
+import {Pressable, PressableProps, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { Icon } from "react-native-elements";
 import { SafeAreaView, FlatList } from "react-native";
 import { apiConfig } from "@/Utils/axios";
 import { Testes } from "@/components/Header"
 import { ActivityIndicator } from "react-native";
+import { TouchableHighlightComponent } from "react-native";
+import { Link, usePathname } from "expo-router";
 
 
 type Questoes = {
@@ -21,6 +23,12 @@ type Questoes = {
     alternativa_e: string,
     correta: string,
     nivel: string
+}
+
+type ButtonTypeStyleProps = 'PRIMARY' | 'SECONDARY';
+
+type Alternativa = PressableProps & {
+    type: ButtonTypeStyleProps
 }
 
 export default function Form() {
@@ -42,6 +50,7 @@ export default function Form() {
               console.error("Erro ao buscar sessões:", error);
             });
         },[]);
+
         function selectalt(questIndex: number, alt: string) {
             setChosenAlt((prevChosenAlt) => {
               const updatedAlt = [...prevChosenAlt]; // Faz uma cópia do array
@@ -49,6 +58,7 @@ export default function Form() {
               return updatedAlt;
             });
           }
+          
          function chooseQuest(soma: boolean) {
           if (soma) {
             if (chosenQuest >= questoes.length -1) {
@@ -173,64 +183,106 @@ export default function Form() {
                         
 
                     /> */}
-                    <Container>
+                    <Container2>
          <Text style={{
-            fontSize: 17, width: 1000, margin: 30, backgroundColor: '#fff', gap: 10, flexDirection: "column" }}>
+            fontSize: 17, width: 1000, padding: 20, backgroundColor: '#fff', flexDirection: "column" }}>
                {questoes[chosenQuest].enunciado}
          </Text>
 
-                                            
-                        <Button onPress={() => selectalt(chosenQuest, "a")}>
+                        <View style={{flexDirection: 'row', padding: 10}}>                 
                         {chosenAlt[chosenQuest] === "a" ? (
-                            <Icon name='check' color='#00aced' />
-                        ) : null}
-                        <Text style={{fontSize: 18, height: 30, width: 1000, justifyContent: 'center', borderRadius: 100, textAlign: 'center'}} >{questoes[chosenQuest].alternativa_a}</Text>
-                        </Button>
+                            <Botao type="PRIMARY" onPress={() => selectalt(chosenQuest, "a")}>
+                                <Text>a</Text>
+                            </Botao>
+                        ) : <Botao type="SECONDARY" onPress={() => selectalt(chosenQuest, "a")}>
+                                <Text>a</Text>
+                            </Botao>}
+                        <Text style={{fontSize: 18, height: 30, width: 300, borderRadius: 100, textAlign: 'center', backgroundColor: '#fff'}}>
+                            {questoes[chosenQuest].alternativa_a}
+                        </Text>
+                        </View>
 
-                        <Button onPress={() => selectalt(chosenQuest, "b")}>
+                        <View style={{flexDirection: 'row', padding: 10}}> 
                         {chosenAlt[chosenQuest] === "b" ? (
-                            <Icon name='check' color='#00aced' />
-                        ) : null}
-                        <Text style={{fontSize: 18, height: 30, width: 1000, justifyContent: 'center', alignItems: 'center', borderRadius: 100, textAlign: 'center'}}>{questoes[chosenQuest].alternativa_b}</Text>
-                        </Button>
+                            <Botao type="PRIMARY" onPress={() => selectalt(chosenQuest, "b")}>
+                                <Text>b</Text>
+                            </Botao>
+                        ) : <Botao type="SECONDARY" onPress={() => selectalt(chosenQuest, "b")}>
+                                <Text>b</Text>
+                            </Botao>}
+                        <Text style={{fontSize: 18, height: 30, width: 300,  borderRadius: 100, textAlign: 'center', backgroundColor: '#fff'}}>
+                            {questoes[chosenQuest].alternativa_b}
+                            </Text>
+                        </View>
 
-                        <Button onPress={() => selectalt(chosenQuest, "c")}>
+                        <View style={{flexDirection: 'row', padding: 10}}> 
                         {chosenAlt[chosenQuest] === "c" ? (
-                            <Icon name='check' color='#00aced' />
-                        ) : null}
-                        <Text style={{fontSize: 18, height: 30, width: 1000, justifyContent: 'center', alignItems: 'center', borderRadius: 100, textAlign: 'center'}}>{questoes[chosenQuest].alternativa_c}</Text>
-                        </Button>
+                            <Botao type="PRIMARY" onPress={() => selectalt(chosenQuest, "c")}>
+                                <Text>c</Text>
+                            </Botao>
+                        ) : <Botao type="SECONDARY" onPress={() => selectalt(chosenQuest, "c")}>
+                                <Text>c</Text>
+                            </Botao>}
+                        <Text style={{fontSize: 18, height: 30, width: 300, borderRadius: 100, textAlign: 'center', backgroundColor: '#fff'}}>{questoes[chosenQuest].alternativa_c}</Text>
+                        </View>
 
-                        <Button onPress={() => selectalt(chosenQuest, "d")}>
+                        <View style={{flexDirection: 'row', padding: 10}}> 
                         {chosenAlt[chosenQuest] === "d" ? (
-                            <Icon name='check' color='#00aced' />
-                        ) : null}
-                        <Text style={{fontSize: 18, height: 30, width: 1000, justifyContent: 'center', alignItems: 'center', borderRadius: 100, textAlign: 'center'}}>{questoes[chosenQuest].alternativa_d}</Text>
-                        </Button>
+                            <Botao type="PRIMARY" onPress={() => selectalt(chosenQuest, "d")}>
+                                <Text>d</Text>
+                            </Botao>
+                        ) : <Botao type="SECONDARY" onPress={() => selectalt(chosenQuest, "d")}>
+                                <Text>d</Text>
+                            </Botao>}
+                        <Text style={{fontSize: 18, height: 30, width: 300, borderRadius: 100, textAlign: 'center', backgroundColor: '#fff'}}>{questoes[chosenQuest].alternativa_d}</Text>
+                        </View>
 
-                        <Button onPress={() => selectalt(chosenQuest, "e")}>
+                        <View style={{flexDirection: 'row', padding: 10}}> 
                         {chosenAlt[chosenQuest] === "e" ? (
-                            <Icon name='check' color='#00aced' />
-                        ) : null}
-                        <Text style={{fontSize: 18, height: 30, width: 1000, justifyContent: 'center', alignItems: 'center', borderRadius: 100, textAlign: 'center'}}>{questoes[chosenQuest].alternativa_e}</Text>
-                        </Button>
+                            <Botao type="PRIMARY" onPress={() => selectalt(chosenQuest, "e")}>
+                                <Text>e</Text>
+                            </Botao>
+                        ) : <Botao type="SECONDARY" onPress={() => selectalt(chosenQuest, "e")}>
+                                <Text>e</Text>
+                            </Botao>}
+                        <Text style={{fontSize: 18, height: 30, width: 300, borderRadius: 100, textAlign: 'center', backgroundColor: '#fff'}}>{questoes[chosenQuest].alternativa_e}</Text>
+                        </View>
 
-                        <Button onPress={() => selectalt(chosenQuest, "f")}>
+                  
+                        <View style={{flexDirection: 'row', padding: 10}}> 
                         {chosenAlt[chosenQuest] === "f" ? (
-                            <Icon name='check' color='#00aced' />
-                        ) : null}
-                        <Text>eu nao sei aaaaaaaaaaaaaaaaaaaa</Text>
-                        </Button>
+                            <Naosei type="PRIMARY" onPress={() => selectalt(chosenQuest, "f")}>
+                                <Text>Não sei</Text>
+                            </Naosei>
+                        ) : <Naosei type="SECONDARY" onPress={() => selectalt(chosenQuest, "f")}>
+                                <Text>Não sei</Text>
+                            </Naosei>}
+                        </View>
 
-                        
-                      <Trocar disabled={chosenQuest <= 0} onPress={()=> chooseQuest(false)}>
-                        <Text>anterior</Text>
-                      </Trocar>
-                      <Trocar onPress={()=>chosenQuest >= questoes.length -1? finalizar() : chooseQuest(true)}>
-                        <Text>{chosenQuest >= questoes.length -1? 'finalizar' : 'proximo'}</Text>
-                      </Trocar>
+                   
+                        <View style={{flexDirection: 'row', gap: 700, justifyContent: 'center', marginTop: 90}}>
+                        <Trocar disabled={chosenQuest <= 0} onPress={() => chooseQuest(false)}>
+                            <Text style={{color: '#fff'}}>Anterior</Text>
+                        </Trocar>
+
+                        {chosenQuest < questoes.length - 1 ? (
+                            <Trocar onPress={() => chooseQuest(true)}>
+                            <Text style={{color: '#fff'}}>Próximo</Text>
+                            </Trocar>
+                        ) : (
+                           
+                            <Trocar onPress={finalizar}>
+                            <Link href={{pathname: '/(Resultado)'}}>   
+                            <Text style={{color: '#fff'}}>Finalizar</Text>
+                            </Link>
+                            </Trocar>
+                       
+                        )}
+                        </View>
+
+                    
                 
-        </Container>   
+        </Container2>   
 
                 </SafeAreaView>
                     </Main>
@@ -248,6 +300,11 @@ export default function Form() {
 const Container = styled.ScrollView` 
     height: 100%;
     background-color: ${({ theme }) => theme.COLORS.WHITE_BLUE}; 
+    
+`
+
+const Container2 = styled.ScrollView` 
+    background-color: ${({ theme }) => theme.COLORS.WHITE}; 
     
 `
 
@@ -278,7 +335,7 @@ const Separar = styled.View`
 `
 
 const Cards = styled.View`
-    gap: 20px;
+    gap: 10px;
 `
 
 const Info = styled.View`
@@ -333,30 +390,28 @@ const Main = styled.View`
     background-color: ${({ theme }) => theme.COLORS.WHITE}; 
 `
 
-const Alternativas = styled.View`
-    gap: 10px;
-    margin-top: 25px;
-    margin-right: 540px;
-    flex-direction: column;
-    
-`
-
-const A = styled.Pressable`   
-    flex-direction: row;
-    gap: 10px;
-    align-items: center;
-    background-color: ${({ theme }) => theme.COLORS.WHITE}; 
-`
-
-const Botao = styled.TouchableOpacity`   
+const Botao = styled(Pressable)<Alternativa>`   
     border-width: 2px;
     height: 30px;
     width: 30px;
     justify-content: center;
     align-items: center;
     border-radius: 100px;
-    border-color: ${({ theme }) => theme.COLORS.BLUE_300}; ;
+    border-color: ${({ theme }) => theme.COLORS.BLUE_300};
+    background-color: ${({ theme, type }) => 
+    type === 'PRIMARY' ? theme.COLORS.GREEN_500 : theme.COLORS.WHITE};
+`
 
+const Naosei = styled(Pressable)<Alternativa>`   
+    border-width: 2px;
+    height: 30px;
+    width: 100px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border-color: ${({ theme }) => theme.COLORS.GRAY_400};
+    background-color: ${({ theme, type }) => 
+    type === 'PRIMARY' ? theme.COLORS.GREEN_500 : theme.COLORS.WHITE};
 `
 
 const Pergunta = styled.Text`
@@ -364,25 +419,6 @@ const Pergunta = styled.Text`
     text-align: start;
     margin-top: 30px;
 `
-
-const Proxima = styled.Pressable`   
-    height: 28px;
-    width: 110px;
-    border-radius: 4px;
-    justify-content: center;
-    align-items: center;
-    background-color: ${({ theme }) => theme.COLORS.BLUE_250}; 
-`
-
-const Button = styled.Pressable<{ disabled?: boolean }>`
-    height: 3rem;
-    width: 10rem;
-    flex-direction: row;
-    border-radius: 0.3rem;
-    gap: 10rem;
-    align-items: center;
-    justify-content: center;
-`;
 
 const Trocar = styled.Pressable<{ disabled?: boolean }>`
     height: 28px;

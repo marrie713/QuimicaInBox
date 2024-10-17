@@ -7,6 +7,7 @@ export default {
       BLUE_500: '#00507D',
       BLUE_400: '#0392BE',
       BLUE_300: '#1d64d0',
+      BLUE_350: '#b3ccf2',
       BLUE_250: '#87b8e6',
       BLUE_200: '#bdd3e7',
       BLUE_100: '#c6d7f2',
