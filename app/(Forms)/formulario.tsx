@@ -272,7 +272,8 @@ export default function Form() {
                         ) : (
                            
                             <Trocar onPress={finalizar}>
-                            <Link href={{pathname: '/(Resultado)'}}>   
+                            <Link href={{pathname: '/(Resultado)', params: {}
+                            }}>   
                             <Text style={{color: '#fff'}}>Finalizar</Text>
                             </Link>
                             </Trocar>

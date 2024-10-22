@@ -47,7 +47,7 @@ async function loginFunc()
                 }
                 else
                 {
-                   router.push('/(Inicial)') 
+                   router.push('/(Pagprof)') 
                 }
             }
             catch(error)

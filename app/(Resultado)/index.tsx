@@ -99,7 +99,8 @@ const Main = styled.View`
 const Root = styled.View`
   flex-direction: row;
   justify-content: center;
- align-items: center;
+  align-items: center;
+  margin-top: 100px;
 `
 
 const Informacoes = styled.View`

@@ -83,7 +83,7 @@ export default function Home(){
                 </Title>
                 
                 <SafeAreaView>
-                <FlatList style={{marginBottom: 50}}
+                <FlatList style={{marginBottom: 50, flexGrow: 1}}
                         data={JSON.parse(testes)}
                         renderItem={({item}) => <TestCard
                             imagem={item.imagem}
@@ -92,7 +92,7 @@ export default function Home(){
                             materia={item.materia} 
                         />}
                         keyExtractor={item => item.id}
-                        horizontal
+                        contentContainerStyle={{flexWrap: 'wrap', flexDirection: 'row', justifyContent: 'center'}}                
                         
                     />
                 </SafeAreaView>
