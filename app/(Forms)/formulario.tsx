@@ -8,8 +8,8 @@ import { SafeAreaView, FlatList } from "react-native";
 import { apiConfig } from "@/Utils/axios";
 import { Testes } from "@/components/Header"
 import { ActivityIndicator } from "react-native";
-import { TouchableHighlightComponent } from "react-native";
-import { Link, usePathname } from "expo-router";
+import { Link, usePathname, useRouter, router} from "expo-router";
+import { Propse } from "@/components/TestCard";
 
 
 type Questoes = {
@@ -31,11 +31,10 @@ type Alternativa = PressableProps & {
     type: ButtonTypeStyleProps
 }
 
-export default function Form() {
+export default function Form({titulo, texto, materia}: Propse) {
     const [questoes, setQuestoes] = useState<Questoes[]>([])
     const [chosenAlt, setChosenAlt] = useState<(string | null)[]>(Array(questoes.length).fill(null));
     const [chosenQuest, setChosenQuest] = useState(0)
-    const [acertos, setAcertos] = useState(0)
 
         useEffect(() => {
             apiConfig.get('/teste/1').then((res) => {
@@ -65,7 +64,6 @@ export default function Form() {
             } 
             else{
               setChosenQuest(chosenQuest + 1)
-              
             }
           }
           else{
@@ -77,7 +75,8 @@ export default function Form() {
           }
          }
 
-         function finalizar() {
+         
+        function finalizar() {
             let totalAcertos = 0; // Variável temporária para contar os acertos
         
             for (let i = 0; i < questoes.length; i++) {
@@ -85,13 +84,15 @@ export default function Form() {
                     totalAcertos++; // Incrementa a contagem de acertos
                 }
             }
-        
-            setAcertos(totalAcertos); // Atualiza o estado com o número total de acertos
             console.log('Você acertou', totalAcertos, 'de', questoes.length);
-        
+            router.push({
+                pathname: "/(Resultado)",
+                params: { acertos: totalAcertos, questNum: questoes.length },
+              });
             // Aqui você também pode adicionar um feedback para o usuário, como um alerta ou navegação para outra tela
         }
         
+
 
         if(questoes.length){
     return (
@@ -100,8 +101,8 @@ export default function Form() {
             <Container showsVerticalScrollIndicator={false}>
                 <Section>
                     <Separar>
-                        <Title>Bem-Vindo ao teste de Modelos Atômicos!</Title>
-                        <Conteudo>Neste teste, você será desafiado a aplicar seus conhecimentos sobre os principais modelos atômicos desenvolvidos ao longo da história da ciência. Desde as primeiras teorias propostas por filósofos até os avanços modernos da física quântica, os modelos atômicos nos ajudaram a entender melhor a estrutura e o comportamento da matéria. Agora é sua chance de revisar esses conceitos fundamentais e testar suas habilidades. Boa sorte!</Conteudo  >
+                        <Title>{titulo}</Title>
+                        <Conteudo>{texto}</Conteudo  >
                     </Separar>
 
                     <Cards>
@@ -184,10 +185,10 @@ export default function Form() {
 
                     /> */}
                     <Container2>
-         <Text style={{
-            fontSize: 17, width: 1000, padding: 20, backgroundColor: '#fff', flexDirection: "column" }}>
-               {questoes[chosenQuest].enunciado}
-         </Text>
+                        <Text style={{
+                            fontSize: 17, width: 1000, padding: 20, backgroundColor: '#fff', flexDirection: "column" }}>
+                            {questoes[chosenQuest].enunciado}
+                        </Text>
 
                         <View style={{flexDirection: 'row', padding: 10}}>                 
                         {chosenAlt[chosenQuest] === "a" ? (
@@ -271,13 +272,9 @@ export default function Form() {
                             </Trocar>
                         ) : (
                            
-                            <Trocar onPress={finalizar}>
-                            <Link href={{pathname: '/(Resultado)', params: {}
-                            }}>   
+                            <Trocar onPress={()=>finalizar()}> 
                             <Text style={{color: '#fff'}}>Finalizar</Text>
-                            </Link>
                             </Trocar>
-                       
                         )}
                         </View>
 

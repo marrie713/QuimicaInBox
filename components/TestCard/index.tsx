@@ -11,18 +11,50 @@ type Props = {
     materia: string
 }
 
+export type Propse = {
+    titulo: string,
+    texto: string,
+    materia: string
+}
+
 export default function TestCard({imagem, titulo, texto, materia}: Props){
 
+    const informacoesAtomistica: Propse[] = 
+    [
+        {
+            titulo: 'Bem-Vindo ao teste de Modelos Atômicos!',
+            texto: 'Neste teste, você será desafiado a aplicar seus conhecimentos sobre os principais modelos atômicos desenvolvidos ao longo da história da ciência. Desde as primeiras teorias propostas por filósofos até os avanços modernos da física quântica, os modelos atômicos nos ajudaram a entender melhor a estrutura e o comportamento da matéria. Agora é sua chance de revisar esses conceitos fundamentais e testar suas habilidades. Boa sorte!',
+            materia: 'Modelo Atômico'
+        },
+        {
+            titulo: 'Bem-Vindo ao teste de Estrutura Atômica!',
+            texto: '',
+            materia: 'Estrutura Atômica'
+        },
+        {
+            titulo: '',
+            texto: '',
+            materia: 'Configuração eletrônica'
+        },
+        {
+            titulo: '',
+            texto: '',
+            materia: 'Radioatividade'
+        },
+       
+    ]
+    
     const [questoes, setQuestoes] = useState([]);
 
     return(<Container>
-            <Imagem source={require('../../assets/images/Icons/atom.png')}/>
+            <Imagem source={{uri: imagem}}/>
             <Titulo>{titulo}</Titulo>
             <Conteudo>{texto}</Conteudo>
             <Link href={{
                     pathname: "/(Forms)/formulario",
-                    params: { materia: materia}
-                }} asChild>
+                    params: {
+                        informacoes: JSON.stringify(informacoesAtomistica),
+                   }}} asChild>
             <Botao>
                 <Text style={{color:'#fff', fontSize: 16, fontWeight: "bold"}}>Acessar</Text>
             </Botao>

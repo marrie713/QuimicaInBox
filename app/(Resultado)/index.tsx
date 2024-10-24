@@ -1,9 +1,11 @@
 import theme from "@/theme"; 
 import { View, Text, SafeAreaView, FlatList } from "react-native";
 import styled, { ThemeProvider } from "styled-components/native"; 
-export default function Final(){
+import { useLocalSearchParams } from "expo-router";
+import { ActivityIndicator } from "react-native";
 
-    
+
+export default function Final(){
 const DATA = [
     {
       id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
@@ -26,7 +28,6 @@ const DATA = [
       title: '• Solubilidade',
     },
   ];
-  
         type ItemProps = {title: string};
 
         const Item = ({title}: ItemProps) => (
@@ -34,6 +35,13 @@ const DATA = [
             <Resultado>{title}</Resultado>
         </View>
         );
+
+        const { acertos, questNum } = useLocalSearchParams();
+        const acertosNumber = Number(acertos);
+        const questNumNumber = Number(questNum);
+        const porcentagem = ((acertosNumber / questNumNumber) * 100).toFixed(2);
+        const erros = questNumNumber - acertosNumber
+            if (acertos && questNum){
     return (
       
         <ThemeProvider theme={theme}>
@@ -52,9 +60,9 @@ const DATA = [
                     <Main>
                         <Informacoes>
                         <Text style={{fontSize: 18, color: '#fff', fontWeight: 'bold'}}>Porcentagem:</Text>
-                        <Text style={{fontSize: 50, color: '#fff'}}>60%</Text>
-                        <Text style={{color: '#00bf63', fontWeight: 'bold'}}>12 questões corretas</Text>
-                        <Text style={{color: '#ff3131', fontWeight: 'bold'}}>8 questões incorretas</Text>
+                        <Text style={{fontSize: 50, color: '#fff'}}>{porcentagem}%</Text>
+                        <Text style={{color: '#00bf63', fontWeight: 'bold'}}>{acertos} questões corretas</Text>
+                        <Text style={{color: '#ff3131', fontWeight: 'bold'}}>{erros} questões incorretas</Text>
                         </Informacoes>
 
                         <View style={{backgroundColor: '#fff', height: 240, width: 3.5,}}></View>
@@ -62,7 +70,7 @@ const DATA = [
                     <View style={{alignItems: 'center'}}>
                         <Porcentagem>
                             <InnerCircle>
-                                <Text style={{fontSize: 30, color: '#fff', fontWeight: 'bold'}}>12/20</Text>
+                                <Text style={{fontSize: 30, color: '#fff', fontWeight: 'bold'}}>{acertos}/{questNum}</Text>
                             </InnerCircle>
                         </Porcentagem>
                         <Text style={{color: '#fff', fontSize: 16}}>Total de acertos</Text>
@@ -73,6 +81,10 @@ const DATA = [
         </ThemeProvider>
   
     );
+    }
+    else{
+        return(<ActivityIndicator />)
+    }
 }
 
 
@@ -99,8 +111,7 @@ const Main = styled.View`
 const Root = styled.View`
   flex-direction: row;
   justify-content: center;
-  align-items: center;
-  margin-top: 100px;
+  margin-top: 120px;
 `
 
 const Informacoes = styled.View`
@@ -141,5 +152,3 @@ const Resultado = styled.Text`
   margin-left: 2px;
   color: ${({ theme }) => theme.COLORS.GRAY_300};
 `
-
-

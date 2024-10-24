@@ -182,8 +182,8 @@ export default function Pagprof() {
                         </PickerContainer>
                         
 
-                            {/* seletor de imagem */}
-                        <ImageUploadContainer>
+        {/* seletor de imagem */}
+        <ImageUploadContainer>
             {selectedImage ? (
                 <ImageContainer>
                     <SelectedImage source={{ uri: selectedImage }} resizeMode="contain" />
